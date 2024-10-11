@@ -1,0 +1,45 @@
+h1{
+    font-family: monospace;
+    text-align: center;
+}
+.profile{
+    width: 183px;
+    height: 183px;
+    background-image: url(https://t4.ftcdn.net/jpg/03/03/62/45/360_F_303624505_u0bFT1Rnoj8CMUSs8wMCwoKlnWlh5Jiq.jpg);
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin: auto;
+
+}
+.notify{
+    width: 30px;
+    height: 30px;
+    background-color: palevioletred;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+}
+.setname{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+.setimg{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+.text{
+    display: flex;
+    justify-content: center;
+}
+.box{
+    display: flex;
+    justify-content: center;
+}
