@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1 id="username">Nittayaporn  Kongkaew 67070244, hi</h1>
-    <div class="profile" Id="profile">
+    <div class="profile" id="profile">
         <div class="notify">
             <p>1</p>
         </div>
@@ -23,23 +23,27 @@
         <p>Phone Number list</p>
     </div>
     <div class="box">
-        <input type="text">
-        <input type="text">
+        <input type="text" placeholder="enter name" id="telname">
+        <input type="text" placeholder="enter tel" id="name">
         <button onclick="addRow()">add</button>
     </div>
-    <table id="table">
-        <tr>
-            <th>No.</th>
-            <th>Name</th>
-            <th>Phone</th>
-        </tr>
-    </table>
+    <div class="box">
+        <table id="table">
+            <tr>
+                <th>No.</th>
+                <th>Name</th>
+                <th>Phone</th>
+            </tr>
+        </table>
+    </div>
 
     <script>
         const name = document.getElementById("username");
         const inputName = document.getElementById("input-name");
         const profile = document.getElementById("profile");
-        const inputURL = document.getElementById("input-url")
+        const inputURL = document.getElementById("input-url");
+        var count = 0;
+
 
         function setName(){
             name.textContent = inputName.value + ", hi";
@@ -49,9 +53,22 @@
             profile.style.backgroundImage = "url(" + inputURL.value + ")";
         }
         function addRow(){
+            count += 1;
             const row = document.createElement("tr")
             const cell1 = document.createElement("td")
             const cell2 = document.createElement("td")
+            cell1.textContent = document.getElementById("telname").value
+            cell2.textContent = document.getElementById("name").value
+            const cell0 = document.createElement("td")
+            cell0.textContent = count
+            row.appendChild(cell0)
+            row.appendChild(cell1)
+            row.appendChild(cell2)
+            document.getElementById("table").appendChild(row)
+
+        }
+        function saveCSV(){
+
         }
     </script>
 </body>

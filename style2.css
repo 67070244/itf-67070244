@@ -29,11 +29,13 @@ h1{
     display: flex;
     justify-content: center;
     margin-top: 25px;
+    column-gap: 10px;
 }
 .setimg{
     display: flex;
     justify-content: center;
     margin-top: 15px;
+    column-gap: 10px;
 }
 .text{
     display: flex;
@@ -42,4 +44,11 @@ h1{
 .box{
     display: flex;
     justify-content: center;
+    column-gap: 10px;
+}
+table{
+    border:15px solid ;
+}
+table tr{
+    border: 1px solid black;
 }
