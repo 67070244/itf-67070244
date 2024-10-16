@@ -26,13 +26,14 @@
         <input type="text" placeholder="enter name" id="telname">
         <input type="text" placeholder="enter tel" id="name">
         <button onclick="addRow()">add</button>
+        <button onclick="saveCSV()">export</button>
     </div>
     <div class="box">
         <table id="table">
             <tr>
                 <th>No.</th>
                 <th>Name</th>
-                <th>Phone</th>
+                <th>Phone Number</th>
             </tr>
         </table>
     </div>
@@ -43,7 +44,9 @@
         const profile = document.getElementById("profile");
         const inputURL = document.getElementById("input-url");
         var count = 0;
-
+        let phonenumber = [["No.", "Name", "Phone"]]
+        let tmp = []
+        console.log(saveButton.value)
 
         function setName(){
             name.textContent = inputName.value + ", hi";
@@ -65,11 +68,24 @@
             row.appendChild(cell1)
             row.appendChild(cell2)
             document.getElementById("table").appendChild(row)
+            const addBtn = document.getElementById("telname");
+            const saveButton = document.getElementById("name");
+            tmp = [count, addBtn, saveButton]
+            phonenumber.push(tmp)
 
         }
-        function saveCSV(){
-
-        }
+        function saveCSV() {
+        const csvContent = phonenumber.map(row => row.join(",")).join("\n"); // Convert array to CSV string
+        const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+        const link = document.createElement("a");
+        const url = URL.createObjectURL(blob);
+        link.setAttribute("href", url);
+        link.setAttribute("download", "data.csv");
+        link.style.visibility = "hidden";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        };
     </script>
 </body>
 </html>
